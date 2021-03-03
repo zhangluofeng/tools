@@ -1,5 +1,6 @@
 {
     "name": "zhangluofeng/tools",
+    "version": "1.0.0",
     "description": "php tools",
     "type": "library",
     "license": "MIT",
@@ -9,7 +10,6 @@
             "email": "605111738@qq.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.6"
     },
