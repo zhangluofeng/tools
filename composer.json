@@ -1,0 +1,21 @@
+{
+    "name": "zhangluofeng/tools",
+    "description": "php tools",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zhangluofeng",
+            "email": "605111738@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zlf\\": "src/"
+        }
+    }
+}
