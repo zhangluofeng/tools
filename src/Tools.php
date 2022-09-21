@@ -84,29 +84,10 @@ class Tools
         return strtotime("$first_day +1 month -1 second");
     }
 
+    //获取毫秒时间戳
     public static function millisecond()
     {
         return intval(microtime(true) * 1000);
-    }
-
-    public static function millisecondText($milli_second)
-    {
-        return date('Y-m-d H:i:s', $milli_second / 1000) . sprintf('.%03d', $milli_second % 1000);
-    }
-
-    public static function millisecondValue($milli_second)
-    {
-        return intval(date('His', $milli_second / 1000) . sprintf('%03d', $milli_second % 1000));
-    }
-
-    //获取毫秒时间戳
-    public static function millisecondAt()
-    {
-        list($usec, $sec) = explode(' ', microtime());
-        $usec2msec = intval($usec * 1000);
-        $sec2msec = intval($sec * 1000);
-        $time = $usec2msec + $sec2msec;
-        return $time;
     }
 
     public static function uuid($prefix = '', $split = '')
