@@ -103,5 +103,37 @@ class Tools
         return $prefix . $uuid;
     }
 
+    public static function randomString($type = 'alnum', $len = 8)
+    {
+        switch ($type) {
+            case 'basic':
+                return mt_rand();
+            case 'md5':
+                return md5(uniqid(mt_rand()));
+            case 'sha1':
+                return sha1(uniqid(mt_rand(), TRUE));
+            case 'alnum':
+                $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                break;
+            case 'number':
+                $pool = '0123456789';
+                break;
+            case 'nozero':
+                $pool = '123456789';
+                break;
+            case 'alpha':
+                $pool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                break;
+            default:
+                return false;
+        }
+
+        if (!empty($pool)) {
+            return substr(str_shuffle(str_repeat($pool, ceil($len / strlen($pool)))), 0, $len);
+        }
+
+        return false;
+    }
+
 
 }
