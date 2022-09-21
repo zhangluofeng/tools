@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Zlf;
-
+namespace CommonTools;
 
 class Tools
 {
@@ -101,7 +99,7 @@ class Tools
         return intval(date('His', $milli_second / 1000) . sprintf('%03d', $milli_second % 1000));
     }
 
-//获取毫秒时间戳
+    //获取毫秒时间戳
     public static function millisecondAt()
     {
         list($usec, $sec) = explode(' ', microtime());

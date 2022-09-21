@@ -1,6 +1,6 @@
 <?php
 
-namespace Zlf;
+namespace CommonTools;
 
 class Jwt
 {
@@ -47,16 +47,16 @@ class Jwt
 
     /**
      * 验证token是否有效,默认验证exp,nbf,iat时间
-     * @param string $Token 需要验证的token
+     * @param string $token 需要验证的token
      * @return bool|string
      */
-    public static function verifyToken($Token, $key = '')
+    public static function verifyToken($token, $key = '')
     {
         if (!$key) {
             $key = self::$key;
         }
 
-        $tokens = explode('.', $Token);
+        $tokens = explode('.', $token);
         if (count($tokens) != 3)
             return false;
 
