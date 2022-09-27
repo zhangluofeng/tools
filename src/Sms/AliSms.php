@@ -53,10 +53,9 @@ class AliSms
                 ]),
                 $security
             );
-            if($content->Code=='OK'){
+            if ($content->Code == 'OK') {
                 return true;
             }
-            var_dump($content);
 
         } catch (\Exception $exception) {
             var_dump($exception->getCode());
