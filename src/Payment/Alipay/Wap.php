@@ -12,7 +12,7 @@ class Wap
     {
         $this->app_id = $appid;
         $this->merchant_private_key = $merchant_private_key;
-        $this->alipay_public_key= $alipay_public_key;
+        $this->alipay_public_key = $alipay_public_key;
         $this->notify_url = $notify_url;//不需要urlencode
         $this->return_url = $return_url;//不需要urlencode
 
@@ -32,7 +32,7 @@ class Wap
         $payRequestBuilder->setSubject($subject);
         $payRequestBuilder->setOutTradeNo($out_trade_no);
         $payRequestBuilder->setTotalAmount($total_amount);
-        $payRequestBuilder->setTimeExpress( "1m");
+        $payRequestBuilder->setTimeExpress("1m");
 
         $payResponse = new \AlipayTradeService($config);
         $result = $payResponse->wapPay($payRequestBuilder, $config['return_url'], $config['notify_url']);
@@ -50,8 +50,9 @@ class Wap
         return $alipaySevice->check($input);
     }
 
-    private function getConfig(){
-        $config =  [
+    private function getConfig()
+    {
+        $config = [
             //应用ID,您的APPID。
             'app_id' => $this->app_id,
             //商户私钥，您的原始格式RSA私钥

@@ -56,7 +56,7 @@ class H5
         return $res;
     }
 
-    public function notifyV3($input=[])
+    public function notifyV3($input = [])
     {
         if (empty($input)) {
             $input = file_get_contents('php://input');
