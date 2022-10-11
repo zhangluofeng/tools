@@ -59,7 +59,7 @@ class Lunar
         return $this->getLunarByBetween($year, $this->getDaysBetweenSolar($year, $month, $date, $yearData[1], $yearData[2]));
     }
 
-    function convertSolarMonthToLunar($year, $month,$date)
+    function convertSolarMonthToLunar($year, $month, $date)
     {
         $yearData = $this->lunarInfo[$year - $this->MIN_YEAR];
         if ($year == $this->MIN_YEAR && $month <= 2 && $date <= 9) {
